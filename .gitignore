@@ -1,0 +1,40 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# TypeScript build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Logs and debugging
+logs/
+*.log
+*.log.*
+
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+coverage/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
