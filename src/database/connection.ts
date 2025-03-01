@@ -1,14 +1,10 @@
 import { Sequelize } from "sequelize-typescript";
 import { envConfig } from "../config/envConfig";
 
-// initializing sequelize
-const sequelize = new Sequelize({
-  database: envConfig.DB_NAME,
-  dialect: "mysql",
-  username: envConfig.DB_USERNAME,
-  password: envConfig.DB_PASSWORD,
-  host: envConfig.DB_HOST,
-  port: Number(envConfig.DB_PORT),
+// initializing sequelizecls
+const URI =
+  "postgresql://postgres:BC30UM4gOwgCC4jS@db.zjyeeksmkslyfsinjkkr.supabase.co:5432/postgres";
+const sequelize = new Sequelize(URI, {
   models: [__dirname + "/models"],
 });
 
