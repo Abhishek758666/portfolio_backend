@@ -1,7 +1,7 @@
 import app from "./src/app";
 import { envConfig } from "./src/config/envConfig";
 
-const port = envConfig.PORT || 3001;
+const port = envConfig.PORT || 4001;
 
 const startServer = () => {
   app.listen(port, () => {
