@@ -1,7 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
-import { envConfig } from "../config/envConfig";
 
-// initializing sequelize
 const URI =
   "postgresql://postgres:BC30UM4gOwgCC4jS@db.zjyeeksmkslyfsinjkkr.supabase.co:5432/postgres";
 
