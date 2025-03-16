@@ -1,9 +1,10 @@
 import { Sequelize } from "sequelize-typescript";
+import { envConfig } from "../config/envConfig";
 
 const URI =
   "postgresql://postgres:BC30UM4gOwgCC4jS@db.zjyeeksmkslyfsinjkkr.supabase.co:5432/postgres";
 
-const sequelize = new Sequelize(URI, {
+const sequelize = new Sequelize(envConfig.CONNECTION_STRING as string, {
   models: [__dirname + "/models"],
 });
 
