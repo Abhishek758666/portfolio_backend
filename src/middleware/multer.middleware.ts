@@ -11,7 +11,6 @@ const storage = multer.diskStorage({
     ];
 
     if (!allowedFileTypes.includes(file.mimetype)) {
-      console.log(file.mimetype);
       cb(new Error("invalid file type"));
       return;
     }
