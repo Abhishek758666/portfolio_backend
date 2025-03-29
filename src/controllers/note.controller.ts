@@ -31,11 +31,12 @@ class NoteController {
     const noteTemplate = NoteVerificationTemplate(
       name,
       message,
-      createdNote.image
+      createdNote.image,
+      createdNote.id
     );
     nodeMailer
       .sendMail(
-        "a8parasite@gmail.com",
+        "abhishekkhati39@gmail.com",
         noteTemplate.subject,
         noteTemplate.text,
         noteTemplate.html

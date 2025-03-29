@@ -49,8 +49,12 @@ export default new Mailer();
 export const NoteVerificationTemplate = (
   userName: string,
   message: string,
-  ImageId: string
+  ImageId: string,
+  noteId: string
 ) => {
+  const imageLink = `https://portfolio-backend-ftfj.onrender.com/uploads/${ImageId}`;
+  const verifyLink = `https://abhishekhati.com.np/verify/${noteId}`;
+
   const subject = `New Visitor Note Requires Your Approval`;
 
   const text = `
@@ -229,7 +233,7 @@ export const NoteVerificationTemplate = (
                       </div>
                       
                       <div class="note-image-placeholder">
-                          <img src="https://portfolio-backend-ftfj.onrender.com/uploads/"${ImageId}/>
+                          <img src=${imageLink} />
                       </div>
                       
                       <div class="note-message">
@@ -240,8 +244,7 @@ export const NoteVerificationTemplate = (
                   <p>Would you like to approve this note to appear in your portfolio?</p>
                   
                   <div class="button-container">
-                      <a href="{{approveLink}}" class="button approve">Approve</a>
-                      <a href="{{rejectLink}}" class="button reject">Reject</a>
+                      <a href=${verifyLink} class="button approve">Approve</a>
                   </div>
                   
                   <div class="signature">
