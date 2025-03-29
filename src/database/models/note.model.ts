@@ -30,6 +30,12 @@ class Note extends Model {
     allowNull: false,
   })
   declare message: string;
+
+  @Column({
+    type: DataType.BOOLEAN,
+    defaultValue: false,
+  })
+  declare verified: string;
 }
 
 export default Note;

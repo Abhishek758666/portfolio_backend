@@ -56,7 +56,7 @@ Valorant → sharpens strategic debugging.
 
 Story-driven games (e.g., God of War) inspire narrative UI flows.
 
-Nature Hikes: UI/UX灵感来自极简主义景观.
+Nature Hikes: UI/UX.
 
 🍔 Food & Culture
 Favorites: Sekuwa (bold flavors), momo (coding breaks), masu bhat.
