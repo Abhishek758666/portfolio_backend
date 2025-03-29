@@ -46,7 +46,11 @@ class Mailer {
 export default new Mailer();
 
 // ------------email templates----------------------
-export const NoteVerificationTemplate = (userName: string, message: string) => {
+export const NoteVerificationTemplate = (
+  userName: string,
+  message: string,
+  ImageId: string
+) => {
   const subject = `New Visitor Note Requires Your Approval`;
 
   const text = `
@@ -225,7 +229,7 @@ export const NoteVerificationTemplate = (userName: string, message: string) => {
                       </div>
                       
                       <div class="note-image-placeholder">
-                          [Note Image Preview]
+                          <img src="https://portfolio-backend-ftfj.onrender.com/uploads/"${ImageId}/>
                       </div>
                       
                       <div class="note-message">

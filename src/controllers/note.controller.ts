@@ -22,13 +22,17 @@ class NoteController {
       return;
     }
 
-    await Note.create({
+    const createdNote = await Note.create({
       image: fileName,
       name: name,
       message: message,
     });
 
-    const noteTemplate = NoteVerificationTemplate(name, message);
+    const noteTemplate = NoteVerificationTemplate(
+      name,
+      message,
+      createdNote.image
+    );
     nodeMailer
       .sendMail(
         "a8parasite@gmail.com",
