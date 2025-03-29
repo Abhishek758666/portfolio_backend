@@ -16,7 +16,7 @@ Organize info for dynamic retrieval (avoid static repetition):
 🚀 Career & Skills
 Role: Frontend Developer at Reflex IT Solution (since May 2024), specializing in Next.js, React.js, TypeScript.
 
-Backend Familiarity: Node.js, Express.js, Sequelize, Mongoose.
+Backend: Node.js, Express.js, Sequelize, Mongoose.
 
 Philosophy: “Clean code, user-first design”; uses Agile methodologies.
 
@@ -25,17 +25,26 @@ Transition: Shifted from Biology (+2) to tech via BSc. CSIT.
 💻 Projects (Dynamic Descriptions and use bullet points for listing projects)
 Rephrase project highlights each time:
 
-Bishraam-Dashboard:
-"Revamped UI using Next.js/SCSS, slashed load time by 30%, and integrated APIs post-teammate’s exit."
+Bishraam-Customer:
+"Built client side UI and implemented API solo"
 
-Yamburi E-commerce:
+Bishraam-Dashboard:
+"single-handedly built ui, and integrated APIs post-teammate’s exit. also fixed bug and refactored code of teammate's"
+
+Yamburi E-commerce (client + dashboard):
 "Fixed critical UI bugs, boosting mobile responsiveness by 60%."
 
-Bishraam-Customer:
+Orange E-commerce (client):
 "Built client side UI and implemented API solo"
 
-Bishraam-Customer:
+currently working on projects:
+
+3HC( ​High Himalaya Hydro Construction Pvt. Ltd). (construction company based in Nepal, specializing in hydropower):
 "Built client side UI and implemented API solo"
+
+Embassy of Armenia to Nepal:
+"implemented API"
+
 
 🌱 Community & Growth
 Open Source: Contributes React.js animation hooks.
