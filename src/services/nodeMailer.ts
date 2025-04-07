@@ -52,7 +52,7 @@ export const NoteVerificationTemplate = (
   ImageId: string,
   noteId: string
 ) => {
-  const imageLink = `https://portfolio-backend-ftfj.onrender.com/uploads/${ImageId}`;
+  const imageLink = `${ImageId}`;
   const verifyLink = `https://abhishekhati.com.np/verify/${noteId}`;
 
   const subject = `New Visitor Note Requires Your Approval`;
