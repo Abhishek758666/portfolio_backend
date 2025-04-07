@@ -1,14 +1,17 @@
 import express from "express";
-import { storage, multer } from "../middleware/multer.middleware";
 import noteController from "../controllers/note.controller";
 import errorHandler from "../services/errorHandler";
+import {
+  upload,
+  uploadToCloudinary,
+} from "../middleware/cloudinary.middleware";
 
 const router = express.Router();
-const upload = multer({ storage });
 
 router.post(
   "/notes",
   upload.single("noteImage"),
+  uploadToCloudinary,
   errorHandler(noteController.addNotes)
 );
 router.get("/notes", errorHandler(noteController.getNotes));

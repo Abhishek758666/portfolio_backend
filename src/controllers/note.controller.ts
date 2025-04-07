@@ -13,8 +13,7 @@ class NoteController {
   }
 
   async addNotes(req: Request, res: Response): Promise<void> {
-    const fileName = req?.file?.filename;
-    const { name, message } = req.body;
+    const { name, message, imageUrl } = req.body;
     if (!name || !message) {
       res.status(400).json({
         message: "please provide all the fields",
@@ -23,7 +22,7 @@ class NoteController {
     }
 
     const createdNote = await Note.create({
-      image: fileName,
+      image: imageUrl,
       name: name,
       message: message,
     });
