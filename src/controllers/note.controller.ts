@@ -58,6 +58,24 @@ class NoteController {
     await noteExist.update({ verified: true });
     res.status(201).json({ message: "Note verified successfully" });
   }
+
+  async deleteNotes(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+
+      const noteExist = await Note.findByPk(id);
+
+      if (!noteExist) {
+        res.status(404).json({ message: "Note doesn't exist" });
+        return;
+      }
+
+      await noteExist.destroy();
+      res.status(200).json({ message: "Note deleted successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: "An error occurred", error: error });
+    }
+  }
 }
 
 export default new NoteController();

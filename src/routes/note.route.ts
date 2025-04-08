@@ -16,5 +16,6 @@ router.post(
 );
 router.get("/notes", errorHandler(noteController.getNotes));
 router.patch("/notes/:id", errorHandler(noteController.verifyNotes));
+router.delete("/notes/:id", errorHandler(noteController.deleteNotes));
 
 export default router;

@@ -53,7 +53,8 @@ export const NoteVerificationTemplate = (
   noteId: string
 ) => {
   const imageLink = `${ImageId}`;
-  const verifyLink = `https://abhishekhati.com.np/verify/${noteId}`;
+  const verifyLink = `http://localhost:3000/verify/${noteId}`;
+  const rejectLink = `http://localhost:3000/delete/${noteId}`;
 
   const subject = `New Visitor Note Requires Your Approval`;
 
@@ -65,8 +66,8 @@ export const NoteVerificationTemplate = (
       
       Please verify whether to show this note in your portfolio or not.
       
-      Approve: {{approveLink}}
-      Reject: {{rejectLink}}
+      Approve: {${verifyLink}}
+      Reject: {${rejectLink}}
     `;
 
   const html = `
@@ -96,7 +97,7 @@ export const NoteVerificationTemplate = (
               }
               
               .header {
-                  background: linear-gradient(135deg, #6e8efb, #a777e3);
+                  background: linear-gradient(135deg,rgb(108, 110, 117),rgb(40, 38, 41));
                   color: white;
                   padding: 25px 30px;
                   text-align: center;
@@ -109,7 +110,7 @@ export const NoteVerificationTemplate = (
               }
               
               .content {
-                  padding: 30px;
+                    padding: 30px;
               }
               
               .greeting {
@@ -120,7 +121,7 @@ export const NoteVerificationTemplate = (
               
               .note-box {
                   background: #f8f9ff;
-                  border-left: 4px solid #6e8efb;
+                  border-left: 4px solid rgb(79, 84, 101);
                   padding: 20px;
                   border-radius: 8px;
                   margin: 25px 0;
@@ -203,6 +204,8 @@ export const NoteVerificationTemplate = (
               
               .note-image-placeholder {
                   background: #f0f0f0;
+                  width:max-content;
+                  margin: 0 auto;
                   height: 150px;
                   display: flex;
                   align-items: center;
@@ -245,6 +248,10 @@ export const NoteVerificationTemplate = (
                   
                   <div class="button-container">
                       <a href=${verifyLink} class="button approve">Approve</a>
+                  </div>
+
+                  <div class="button-container">
+                      <a href=${verifyLink} class="button reject">Reject</a>
                   </div>
                   
                   <div class="signature">
