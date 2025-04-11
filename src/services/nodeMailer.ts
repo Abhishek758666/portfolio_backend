@@ -53,8 +53,8 @@ export const NoteVerificationTemplate = (
   noteId: string
 ) => {
   const imageLink = `${ImageId}`;
-  const verifyLink = `http://localhost:3000/verify/${noteId}`;
-  const rejectLink = `http://localhost:3000/delete/${noteId}`;
+  const verifyLink = `https://abhishekhati.com.np/verify/${noteId}`;
+  const rejectLink = `https://abhishekhati.com.np/delete/${noteId}`;
 
   const subject = `New Visitor Note Requires Your Approval`;
 
