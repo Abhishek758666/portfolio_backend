@@ -4,7 +4,6 @@ import {
   UploadApiResponse,
   UploadApiErrorResponse,
 } from "cloudinary";
-import sharp from "sharp";
 import { Request, Response, NextFunction } from "express";
 import { envConfig } from "../config/envConfig";
 
@@ -53,12 +52,7 @@ export const uploadToCloudinary: any = async (
       return res.status(400).json({ error: "No file provided" });
     }
 
-    const resizedBuffer = await sharp(req.file.buffer)
-      .resize({ width: 800, height: 800, fit: "inside" })
-      .jpeg({ quality: 80 })
-      .toBuffer();
-
-    const result = await uploadToCloudinaryPromise(resizedBuffer);
+    const result = await uploadToCloudinaryPromise(req.file.buffer);
 
     req.body.imageUrl = result.secure_url;
 
