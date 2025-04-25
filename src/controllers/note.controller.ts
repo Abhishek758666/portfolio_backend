@@ -4,6 +4,11 @@ import nodeMailer, { NoteVerificationTemplate } from "../services/nodeMailer";
 
 class NoteController {
   async getNotes(req: Request, res: Response): Promise<void> {
+    const data = await Note.findAll();
+    res.status(200).json({ data });
+  }
+
+  async getVerifiedNotes(req: Request, res: Response): Promise<void> {
     const data = await Note.findAll({
       where: {
         verified: true,

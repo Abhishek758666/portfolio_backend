@@ -15,6 +15,7 @@ router.post(
   errorHandler(noteController.addNotes)
 );
 router.get("/notes", errorHandler(noteController.getNotes));
+router.get("/notes/verified", errorHandler(noteController.getVerifiedNotes));
 router.patch("/notes/:id", errorHandler(noteController.verifyNotes));
 router.delete("/notes/:id", errorHandler(noteController.deleteNotes));
 

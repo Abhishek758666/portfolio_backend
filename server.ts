@@ -5,7 +5,7 @@ const port = envConfig.PORT || 4001;
 
 const startServer = () => {
   app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`http://localhost:${port}/api/v1`);
   });
 };
 
