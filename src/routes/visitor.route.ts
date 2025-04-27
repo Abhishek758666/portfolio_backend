@@ -8,8 +8,8 @@ const router = express.Router();
 router.post("/visitor", errorHandler(visitorController.trackVisitor));
 router.get(
   "/visitor",
-  // AuthMiddleware.isAuthenticated,
-  // AuthMiddleware.restrictTo(Role.Admin),
+  AuthMiddleware.isAuthenticated,
+  AuthMiddleware.restrictTo(Role.Admin),
   errorHandler(visitorController.getTotalVisitor)
 );
 

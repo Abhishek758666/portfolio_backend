@@ -14,7 +14,7 @@ const adminSeeder = async (): Promise<void> => {
         email: "aabhik81@gmail.com",
         userImage:
           "https://abhishekhati.com.np/_next/image?url=%2Fme.png&w=828&q=75",
-        password: bcrypt.hashSync("password1", 10),
+        password: bcrypt.hashSync("Password@111", 10),
         username: "abhishek",
         role: "admin",
       });
