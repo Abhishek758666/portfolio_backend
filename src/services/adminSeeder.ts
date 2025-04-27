@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import User from "../database/models/user.model";
+import { envConfig } from "../config/envConfig";
 
 const adminSeeder = async (): Promise<void> => {
   try {
@@ -14,7 +15,7 @@ const adminSeeder = async (): Promise<void> => {
         email: "aabhik81@gmail.com",
         userImage:
           "https://abhishekhati.com.np/_next/image?url=%2Fme.png&w=828&q=75",
-        password: bcrypt.hashSync("Password@111", 10),
+        password: bcrypt.hashSync(envConfig.ADMIN_PASSWORD, 10),
         username: "abhishek",
         role: "admin",
       });

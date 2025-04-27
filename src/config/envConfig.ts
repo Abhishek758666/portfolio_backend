@@ -6,6 +6,7 @@ export const envConfig = {
   GEMINI_KEY: process.env.GEMINI_KEY,
   CONNECTION_STRING: process.env.CONNECTION_STRING,
   JWT_SECRET: process.env.JWT_SECRET as string,
+  ADMIN_PASSWORD: process.env.ADMIN_PASSWORD as string,
 
   SMTP_HOST: process.env.SMTP_HOST as string,
   SMTP_PORT: process.env.SMTP_PORT as string,
