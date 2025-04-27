@@ -17,7 +17,7 @@ export enum Role {
 }
 
 class AuthMiddleware {
-  public static async isAuthenticated(
+  async isAuthenticated(
     req: UserRequestType,
     res: Response,
     next: NextFunction
@@ -68,7 +68,7 @@ class AuthMiddleware {
     );
   }
 
-  public static restictto(...roles: Role[]) {
+  restrictTo(...roles: Role[]) {
     return (req: UserRequestType, res: Response, next: NextFunction) => {
       let userRole = req.user?.role as Role;
       console.log(userRole);
@@ -84,4 +84,4 @@ class AuthMiddleware {
   }
 }
 
-export default AuthMiddleware;
+export default new AuthMiddleware();

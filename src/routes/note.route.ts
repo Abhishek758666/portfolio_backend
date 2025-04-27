@@ -5,7 +5,7 @@ import {
   upload,
   uploadToCloudinary,
 } from "../middleware/cloudinary.middleware";
-
+import AuthMiddleware, { Role } from "../middleware/auth.middleware";
 const router = express.Router();
 
 router.post(
@@ -14,9 +14,25 @@ router.post(
   uploadToCloudinary,
   errorHandler(noteController.addNotes)
 );
-router.get("/notes", errorHandler(noteController.getNotes));
 router.get("/notes/verified", errorHandler(noteController.getVerifiedNotes));
-router.patch("/notes/:id", errorHandler(noteController.verifyNotes));
-router.delete("/notes/:id", errorHandler(noteController.deleteNotes));
+
+router.get(
+  "/notes",
+  AuthMiddleware.isAuthenticated,
+  AuthMiddleware.restrictTo(Role.Admin),
+  errorHandler(noteController.getNotes)
+);
+router.patch(
+  "/notes/:id",
+  AuthMiddleware.isAuthenticated,
+  AuthMiddleware.restrictTo(Role.Admin),
+  errorHandler(noteController.verifyNotes)
+);
+router.delete(
+  "/notes/:id",
+  AuthMiddleware.isAuthenticated,
+  AuthMiddleware.restrictTo(Role.Admin),
+  errorHandler(noteController.deleteNotes)
+);
 
 export default router;
