@@ -12,6 +12,8 @@ const adminSeeder = async (): Promise<void> => {
     if (!data) {
       await User.create({
         email: "aabhik81@gmail.com",
+        userImage:
+          "https://abhishekhati.com.np/_next/image?url=%2Fme.png&w=828&q=75",
         password: bcrypt.hashSync("password1", 10),
         username: "abhishek",
         role: "admin",
@@ -21,7 +23,7 @@ const adminSeeder = async (): Promise<void> => {
       console.log("admin already exist");
     }
   } catch (error) {
-    console.log("something went wrong");
+    console.error("something went wrong", error);
   }
 };
 

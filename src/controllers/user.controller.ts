@@ -84,6 +84,7 @@ class UserController {
     );
     res.status(200).json({
       message: "logged in successfully",
+      username: userExist.username,
       token,
     });
   }
