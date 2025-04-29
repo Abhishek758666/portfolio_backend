@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import Visitor from "../database/models/visitor.model";
-import { Op } from "sequelize";
+
 class VisitorController {
   async trackVisitor(req: Request, res: Response): Promise<void> {
     try {
