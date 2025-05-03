@@ -25,7 +25,7 @@ sequelize.sync({ force: false }).then(() => {
 User.hasMany(Blog, { foreignKey: "userId" });
 Blog.belongsTo(User, { foreignKey: "userId" });
 
-Blog.hasMany(Tag, { foreignKey: "blogId" });
-Tag.belongsTo(Tag, { foreignKey: "blogId" });
+Blog.belongsToMany(Tag, { through: "BlogTag" });
+Tag.belongsToMany(Blog, { through: "BlogTag" });
 
 export default sequelize;
