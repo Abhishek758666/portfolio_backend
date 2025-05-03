@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize-typescript";
 import { envConfig } from "../config/envConfig";
 import User from "./models/user.model";
 import Blog from "./models/blog.model";
+import Tag from "./models/tag.model";
 
 const sequelize = new Sequelize(envConfig.CONNECTION_STRING as string, {
   models: [__dirname + "/models"],
@@ -23,5 +24,8 @@ sequelize.sync({ force: false }).then(() => {
 // connections
 User.hasMany(Blog, { foreignKey: "userId" });
 Blog.belongsTo(User, { foreignKey: "userId" });
+
+Blog.hasMany(Tag, { foreignKey: "blogId" });
+Tag.belongsTo(Tag, { foreignKey: "blogId" });
 
 export default sequelize;

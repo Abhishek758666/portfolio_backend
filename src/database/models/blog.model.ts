@@ -23,13 +23,19 @@ class Blog extends Model {
     type: DataType.STRING,
     allowNull: false,
   })
-  declare excert: string;
+  declare excerpt: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
   })
   declare description: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  declare heroImage: string;
 }
 
 export default Blog;
