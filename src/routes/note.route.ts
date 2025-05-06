@@ -27,7 +27,7 @@ router.patch(
   "/notes/:id",
   AuthMiddleware.isAuthenticated,
   AuthMiddleware.restrictTo(Role.Admin),
-  errorHandler(noteController.updateNotes)
+  errorHandler(noteController.toggleNotes)
 );
 router.delete(
   "/notes/:id",
