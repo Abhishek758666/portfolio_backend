@@ -18,7 +18,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3001",
-      "http://admin.abhishekhati.com.np",
+      "https://admin.abhishekhati.com.np",
       "https://your-production-frontend.com",
     ],
     credentials: true,
