@@ -17,11 +17,11 @@ class TagController {
       return;
     }
 
-    await Tag.create({
+    const data = await Tag.create({
       title: title,
     });
 
-    res.status(201).json({ message: "tag added" });
+    res.status(201).json({ message: "tag added", data });
   }
 
   async editTag(req: Request, res: Response): Promise<void> {

@@ -14,6 +14,7 @@ router.post(
   uploadToCloudinary,
   errorHandler(noteController.addNotes)
 );
+
 router.get("/notes/verified", errorHandler(noteController.getVerifiedNotes));
 
 router.get(
@@ -26,7 +27,7 @@ router.patch(
   "/notes/:id",
   AuthMiddleware.isAuthenticated,
   AuthMiddleware.restrictTo(Role.Admin),
-  errorHandler(noteController.verifyNotes)
+  errorHandler(noteController.updateNotes)
 );
 router.delete(
   "/notes/:id",

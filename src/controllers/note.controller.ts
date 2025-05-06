@@ -50,8 +50,9 @@ class NoteController {
     res.status(201).json({ message: "Note added" });
   }
 
-  async verifyNotes(req: Request, res: Response): Promise<void> {
+  async updateNotes(req: Request, res: Response): Promise<void> {
     const { id } = req.params;
+    const { status } = req.body;
 
     const noteExist = await Note.findByPk(id);
 
@@ -60,8 +61,8 @@ class NoteController {
       return;
     }
 
-    await noteExist.update({ verified: true });
-    res.status(201).json({ message: "Note verified successfully" });
+    await noteExist.update({ verified: status });
+    res.status(201).json({ message: "Note updated successfully" });
   }
 
   async deleteNotes(req: Request, res: Response): Promise<void> {
