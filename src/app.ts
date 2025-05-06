@@ -1,4 +1,5 @@
 import "./database/connection";
+import cookieParser from "cookie-parser";
 
 import express from "express";
 import path from "path";
@@ -14,6 +15,7 @@ import adminSeeder from "./services/adminSeeder";
 const app = express();
 
 app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("trust proxy", true);

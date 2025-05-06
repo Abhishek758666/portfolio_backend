@@ -82,12 +82,30 @@ class UserController {
         expiresIn: "24h",
       }
     );
+
+    res.cookie("token", token, {
+      httpOnly: true, // Can't be accessed by JavaScript
+      secure: process.env.NODE_ENV === "production", // Only send over HTTPS in production
+      sameSite: "lax", // Helps prevent CSRF attacks
+      maxAge: 24 * 60 * 60 * 1000, // 1 day expiration
+    });
     res.status(200).json({
       message: "logged in successfully",
       email: userExist.email,
       userImage: userExist.userImage,
       username: userExist.username,
-      token,
+    });
+  }
+
+  public static async logoutUser(req: Request, res: Response): Promise<void> {
+    res.clearCookie("token", {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+    });
+
+    res.status(200).json({
+      message: "Logged out successfully",
     });
   }
 }

@@ -7,6 +7,7 @@ const router: Router = Express.Router();
 
 router.route("/register").post(errorHandler(UserController.registerUser));
 router.route("/login").post(errorHandler(UserController.loginUser));
+router.route("/logout").post(errorHandler(UserController.logoutUser));
 router
   .route("/login/admin")
   .post(
