@@ -14,7 +14,12 @@ import adminSeeder from "./services/adminSeeder";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://admin.abhishekhati.com.np",
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
