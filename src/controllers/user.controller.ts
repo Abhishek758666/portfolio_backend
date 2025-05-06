@@ -39,7 +39,6 @@ class UserController {
         message: "user registered successfully",
       });
     } catch (error: any) {
-      console.log(error);
       throw Error(error);
     }
   }
@@ -84,11 +83,12 @@ class UserController {
     );
 
     res.cookie("token", token, {
-      httpOnly: true, // Can't be accessed by JavaScript
-      secure: process.env.NODE_ENV === "production", // Only send over HTTPS in production
-      sameSite: "lax", // Helps prevent CSRF attacks
-      maxAge: 24 * 60 * 60 * 1000, // 1 day expiration
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "none",
+      maxAge: 24 * 60 * 60 * 1000,
     });
+
     res.status(200).json({
       message: "logged in successfully",
       email: userExist.email,

@@ -16,7 +16,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://admin.abhishekhati.com.np",
+    origin: [
+      "http://localhost:3001",
+      "http://admin.abhishekhati.com.np",
+      "https://your-production-frontend.com",
+    ],
     credentials: true,
   })
 );

@@ -22,7 +22,6 @@ class AuthMiddleware {
     res: Response,
     next: NextFunction
   ): Promise<void> {
-    // const token = req.headers.authorization?.split(" ")[1];
     const token = req.cookies.token;
 
     if (!token) {
@@ -43,6 +42,8 @@ class AuthMiddleware {
           });
           return;
         }
+
+        console.log(decoded);
 
         try {
           const [userData] = await User.findAll({
