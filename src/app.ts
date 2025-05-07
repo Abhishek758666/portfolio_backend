@@ -14,21 +14,23 @@ import adminSeeder from "./services/adminSeeder";
 
 const app = express();
 
+app.set("trust proxy", true);
+app.options("*", cors());
 app.use(
   cors({
     origin: [
-      "http://localhost:3001",
+      "http://localhost:3000",
       "https://admin.abhishekhati.com.np",
+      "https://blog.abhishekhati.com.np",
       "https://abhishekhati.com.np",
-      "https://your-production-frontend.com",
     ],
     credentials: true,
   })
 );
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.set("trust proxy", true);
 
 adminSeeder();
 
