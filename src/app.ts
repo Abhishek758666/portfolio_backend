@@ -19,6 +19,7 @@ app.use(
     origin: [
       "http://localhost:3001",
       "https://admin.abhishekhati.com.np",
+      "https://abhishekhati.com.np",
       "https://your-production-frontend.com",
     ],
     credentials: true,
