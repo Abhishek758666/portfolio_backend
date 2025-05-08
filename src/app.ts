@@ -2,7 +2,6 @@ import "./database/connection";
 import cookieParser from "cookie-parser";
 
 import express from "express";
-import path from "path";
 import cors from "cors";
 
 import aiRoute from "./routes/ai.route";
@@ -15,7 +14,6 @@ import adminSeeder from "./services/adminSeeder";
 const app = express();
 
 app.set("trust proxy", true);
-app.options("*", cors());
 app.use(
   cors({
     origin: [
@@ -41,7 +39,6 @@ app.use("/api/v1", userRoute);
 app.use("/api/v1", tagRoute);
 
 app.get("/", (req, res) => {
-  console.log(path.join(__dirname, "./uploads"));
   res.send("i am alive");
 });
 

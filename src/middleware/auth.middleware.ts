@@ -43,8 +43,6 @@ class AuthMiddleware {
           return;
         }
 
-        console.log(decoded);
-
         try {
           const [userData] = await User.findAll({
             where: {
@@ -74,7 +72,6 @@ class AuthMiddleware {
   restrictTo(...roles: Role[]) {
     return (req: UserRequestType, res: Response, next: NextFunction) => {
       let userRole = req.user?.role as Role;
-      console.log(userRole);
 
       if (!roles.includes(userRole)) {
         res.status(403).json({
