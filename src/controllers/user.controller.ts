@@ -87,6 +87,7 @@ class UserController {
       secure: true,
       sameSite: "none",
       maxAge: 24 * 60 * 60 * 1000,
+      domain: "https://admin.abhishekhati.com.np/",
     });
 
     res.status(200).json({
@@ -102,6 +103,7 @@ class UserController {
       httpOnly: true,
       secure: true,
       sameSite: "none",
+      domain: "https://admin.abhishekhati.com.np/",
     });
 
     res.status(200).json({

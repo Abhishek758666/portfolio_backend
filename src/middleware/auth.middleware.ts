@@ -74,7 +74,7 @@ class AuthMiddleware {
       let userRole = req.user?.role as Role;
 
       if (!roles.includes(userRole)) {
-        res.status(403).json({
+        res.status(401).json({
           message: "you don't have permission",
         });
       } else {
