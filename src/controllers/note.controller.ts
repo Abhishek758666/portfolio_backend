@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import Note from "../database/models/note.model";
 import nodeMailer, { NoteVerificationTemplate } from "../services/nodeMailer";
+import { addNoteSchema, noteSchema } from "../schema/note.schema";
 
 class NoteController {
   async getNotes(req: Request, res: Response): Promise<void> {
@@ -18,7 +19,7 @@ class NoteController {
   }
 
   async addNotes(req: Request, res: Response): Promise<void> {
-    const { name, message, imageUrl } = req.body;
+    const { name, message, image } = addNoteSchema.parse(req.body);
     if (!name || !message) {
       res.status(400).json({
         message: "please provide all the fields",
@@ -27,7 +28,7 @@ class NoteController {
     }
 
     const createdNote = await Note.create({
-      image: imageUrl,
+      image: image,
       name: name,
       message: message,
     });

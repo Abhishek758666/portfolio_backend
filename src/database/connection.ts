@@ -21,7 +21,6 @@ sequelize.sync({ force: false }).then(() => {
   console.log("synced !!!");
 });
 
-// connections
 User.hasMany(Blog, { foreignKey: "userId" });
 Blog.belongsTo(User, { foreignKey: "userId" });
 

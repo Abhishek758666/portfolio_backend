@@ -16,4 +16,26 @@ router
     errorHandler(UserController.loginUser)
   );
 
+router
+  .route("/users")
+  .get(
+    AuthMiddleware.isAuthenticated,
+    AuthMiddleware.restrictTo(Role.Admin),
+    errorHandler(UserController.getUsers)
+  );
+router
+  .route("/users/role/:id")
+  .patch(
+    AuthMiddleware.isAuthenticated,
+    AuthMiddleware.restrictTo(Role.Admin),
+    errorHandler(UserController.changeRole)
+  );
+router
+  .route("/users/:id")
+  .delete(
+    AuthMiddleware.isAuthenticated,
+    AuthMiddleware.restrictTo(Role.Admin),
+    errorHandler(UserController.deleteUser)
+  );
+
 export default router;

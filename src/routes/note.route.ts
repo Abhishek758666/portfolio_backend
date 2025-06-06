@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post(
   "/notes",
-  upload.single("noteImage"),
+  upload.single("image"),
   uploadToCloudinary,
   errorHandler(noteController.addNotes)
 );

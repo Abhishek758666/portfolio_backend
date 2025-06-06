@@ -54,7 +54,7 @@ export const uploadToCloudinary: any = async (
 
     const result = await uploadToCloudinaryPromise(req.file.buffer);
 
-    req.body.imageUrl = result.secure_url;
+    req.body.image = result.secure_url;
 
     next();
   } catch (error) {
