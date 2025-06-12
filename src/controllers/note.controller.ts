@@ -20,12 +20,6 @@ class NoteController {
 
   async addNotes(req: Request, res: Response): Promise<void> {
     const { name, message, image } = addNoteSchema.parse(req.body);
-    if (!name || !message) {
-      res.status(400).json({
-        message: "please provide all the fields",
-      });
-      return;
-    }
 
     const createdNote = await Note.create({
       image: image,
